@@ -20,13 +20,13 @@ bool vvod(int *array,unsigned int n)
     for(unsigned int i=0;i<n;i++)
     {
         if(!(stream>>array[i])){
-            cout<<"nepolnuy massiv";
+            cout<<"An error has occurred while reading input data";
             return false;
         }   
     }
     if(stream>>a)
     {
-    	cout<<"slishkom mnogo"; exit (0);
+    	cout<<"An error has occurred while reading input data"; exit (0);
     
             return false; 
 	}
@@ -42,14 +42,18 @@ void reverse(int *array,unsigned int n)
     
 
 int main(int argc, char** argv) {
-	unsigned int n;
+		int n;
         string stroka;
         getline(cin,stroka);
         istringstream stream(stroka);
 	    if(!(stream>>n)){
-        cout<<"error"<<endl;
+        cout<<"An error has occurred while reading input data"<<endl;
         return -1;
-    }
+    	}
+    	if(n<=0)
+		{
+			cout<<"An error has occurred while reading input data";exit (0);
+		}
     int *array=new int[n];
     if (vvod(array,n))
     {
