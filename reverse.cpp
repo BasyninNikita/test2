@@ -2,6 +2,7 @@
 #include <sstream>
 #include <string>
 #include <utility>
+#include <stdlib.h>
 using namespace std;
 void vyvod(int *array,unsigned int n)
 {
@@ -12,6 +13,7 @@ void vyvod(int *array,unsigned int n)
 }
 bool vvod(int *array,unsigned int n)
 {
+	char a;
     string stroka;
     getline(cin,stroka);
     istringstream stream(stroka);
@@ -22,6 +24,12 @@ bool vvod(int *array,unsigned int n)
             return false;
         }   
     }
+    if(stream>>a)
+    {
+    	cout<<"slishkom mnogo"; exit (0);
+    
+            return false; 
+	}
     return true;
 }
 void reverse(int *array,unsigned int n)
